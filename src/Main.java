@@ -16,7 +16,7 @@ public class Main {
 
             switch (choix) {
                 case "1":
-                    afficherProduits();
+                    afficherProduits(produits, prix, stock);
                     break;
 
                 case "2":
@@ -48,8 +48,11 @@ public class Main {
         System.out.print("Entrez votre choix (1, 2, 3): ");
     }
 
-    static void afficherProduits() {
-        System.out.println("AfficherProduits");
+    static void afficherProduits(ArrayList<String> produits, ArrayList<Double> prix, ArrayList<Integer> stock) {
+        System.out.println("Produits disponibles: ");
+        for (int i = 0; i < produits.size(); i++) {
+            System.out.println(i + ". " + produits.get(i) + " (" + prix.get(i) + " MAD) - Stock: " + stock.get(i));
+        }
     }
 
     static void acheterProduit() {
