@@ -21,7 +21,7 @@ public class Main {
 
                 case "2":
                     acheterProduit(prix, produits, stock);
-                    afficherStock(stock);
+                    afficherStock(produits,stock);
                     break;
 
                 case "3":
