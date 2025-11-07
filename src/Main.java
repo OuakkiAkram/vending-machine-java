@@ -4,5 +4,6 @@ public class Main {
         System.out.println("1. Afficher les produits ");
         System.out.println("2. Acheter un produit");
         System.out.println("3. Quitter");
+        System.out.println("TAJRIBA");
     }
 }
