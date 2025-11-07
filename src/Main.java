@@ -46,6 +46,7 @@ public class Main {
         System.out.println("2. Acheter un produit");
         System.out.println("3. Quitter");
         System.out.print("Entrez votre choix (1, 2, 3): ");
+
     }
 
     static void afficherProduits(ArrayList<String> produits, ArrayList<Double> prix, ArrayList<Integer> stock) {
