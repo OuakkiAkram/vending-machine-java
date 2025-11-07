@@ -20,8 +20,8 @@ public class Main {
                     break;
 
                 case "2":
-                    acheterProduit();
-                    afficherStock();
+                    acheterProduit(prix, produits, stock);
+                    afficherStock(stock);
                     break;
 
                 case "3":
@@ -56,12 +56,39 @@ public class Main {
         }
     }
 
-    static void acheterProduit() {
-        System.out.println("acheterProduit");
+    static void acheterProduit(ArrayList<Double> prix,ArrayList<String> produits, ArrayList<Integer> stock) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Entrez le numéro du produit : ");
+        int nombreProd = scanner.nextInt();
+        scanner.nextLine();
+
+
+        System.out.print("Entrez le montant inséré :  ");
+        int montant = scanner.nextInt();
+        scanner.nextLine();
+
+        if(montant < prix.get(nombreProd-1)) {
+            System.out.print("le montant est insuffisant ! ");
+
+        }else {
+
+                System.out.println("Vous avez acheté : " + produits.get(nombreProd-1) );
+                int reste = (int) (montant - prix.get(nombreProd - 1));
+                System.out.println("Monnaie rendue :" + reste + " MAD");
+                int getValue = stock.get(nombreProd - 1);
+               stock.set(nombreProd - 1, getValue-1 ) ;
+
+
+        }
+
+
+
     }
 
-    static void afficherStock() {
-        System.out.println("afficherStock");
+    static void afficherStock(ArrayList<Integer> stock) {
+        for(int i=0; i<stock.size(); i++){
+            System.out.println(stock.get(i));
+        }
     }
 
 }
