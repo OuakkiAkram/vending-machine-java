@@ -1,16 +1,18 @@
 import java.util.Scanner;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        while (true) {
-            System.out.println("=== Distributeur Automatique ===");
-            System.out.println("1. Afficher les produits ");
-            System.out.println("2. Acheter un produit");
-            System.out.println("3. Quitter");
-            System.out.print("Entrez votre choix (1, 2, 3): ");
-            String choix = scanner.nextLine();
 
+        ArrayList<String> produits = new ArrayList<>(List.of("Eau", "Soda", "Chips", "Chocolat"));
+        ArrayList<Double> prix = new ArrayList<>(List.of(5.0, 8.0, 12.0, 15.0));
+        ArrayList<Integer> stock = new ArrayList<>(List.of(10, 5, 7, 3));
+
+        while (true) {
+            afficherMenu();
+            String choix = scanner.nextLine();
 
             switch (choix) {
                 case "1":
@@ -38,8 +40,16 @@ public class Main {
         scanner.close();
     }
 
+    static void afficherMenu() {
+        System.out.println("=== Distributeur Automatique ===");
+        System.out.println("1. Afficher les produits ");
+        System.out.println("2. Acheter un produit");
+        System.out.println("3. Quitter");
+        System.out.print("Entrez votre choix (1, 2, 3): ");
+    }
+
     static void afficherProduits() {
-        System.out.println("afficherProduits");
+        System.out.println("AfficherProduits");
     }
 
     static void acheterProduit() {
